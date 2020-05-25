@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;700&display=swap');
+
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color:peachpuff;
+  ;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', 'Roboto',
+    monospace;
+    
+}
+
+.App{
+  display: flex;
+  flex-direction: column;
+}
+
+.text{
+  color: orange;
+  text-align: center;
+ 
+}
+
+.text h1{
+  font-family: 'Roboto Condensed', sans-serif;
+  font-weight: bold;
+}
+
+.text hh{
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+
+.logo{
+  text-align: right;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+.button {
+  font-family: 'Roboto Condensed', sans-serif;
+  cursor: pointer;
+  background:peachpuff;
+  color:white;
+  border-color: white;
+  font-weight: bold;
+}
+.button:hover {
+  border-color: grey; /* Green */
+  color: white;
+}
+
+.button-container{
+  text-align: center;
+}
+
+.image-container{
+  text-align: center;
+}
+.image-container img{
+  width: 60%;
+  max-width: 600px;
+
+}
+
+/*Desktop*/
+
+@media screen and (min-width: 961px) {
+
+
+  .App{
+    margin: 20px;
+    border: solid white 10px;
+  }
+ 
+.text h1{
+  font-size: 40px;
+  margin-bottom: 10px;
+
+}
+
+.text hh{
+  font-size: 30px;
+}
+
+.button{
+  margin-top: 15px;
+  margin-bottom: 20px;
+  font-size: 15px;
+  padding: 5px 15px 5px 15px;
+  border-width: 4px;
+
+
+}
+
+
+}
+
+
+/* Tablet */
+@media screen and (min-width: 401px) and (max-width: 960px) {
+
+  .App{
+    margin: 10px;
+    border: solid white 10px;
+  }
+
+  .text h1{
+  font-size: 35px;
+  margin-bottom: 5px;
+
+}
+
+.text hh{
+  font-size: 20px;
+}
+
+.button{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 10px;
+  padding: 5px 10px 5px 10px;
+  border-width: 4px;
+
+}
+
+}
+
+/* Mobile*/
+@media screen and (max-width: 414px) {
+
+  .App{
+    margin: 5px;
+    border: solid white 5px;
+  }
+
+ .text h1{
+   font-size: 20px;
+   margin-top: 2px;
+   margin-bottom: 2px;
+
+ }
+ .text hh{
+  font-size: 10px;
+}
+
+.button{
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-size: 5px;
+  padding: 2px 5px 2px 5px;
+  border-width: 2px;
+
+
+}
+
+}

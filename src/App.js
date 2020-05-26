@@ -1,8 +1,18 @@
 import React from 'react';
 import logo from './logo/SMK_SecondaryLogo_Black.png'
 
+/**
+ * React app fetching data from Statens Museum for Kunst API
+ * 
+ */
+
+
 class App extends React.Component {
 
+/**
+ * constructor
+ * 
+ */
 
     constructor(props) {
 
@@ -13,11 +23,13 @@ class App extends React.Component {
             offset: Math.floor(Math.random()),
             isLoaded: false
         }
-
     }
+    
 
     /**
+     * componentDidMount
      * 
+     * Fecthing json array from url and updating state 
      */
     componentDidMount() {
 
@@ -34,6 +46,13 @@ class App extends React.Component {
             });
 
     }
+
+    /**
+     * async fetchImage
+     * 
+     * Asynchronous function fecthing just one 
+     * random image from url using searchterms
+     */
 
     async fetchImage(){
         const searchterms = [ 
@@ -56,18 +75,23 @@ class App extends React.Component {
             
 
 
+    /**
+     * render
+     * 
+     * Rendering the UI 
+     */
     render() {
 
         const { isLoaded, items } = this.state;
 
         if (!isLoaded)
-            return <div>Loading...</div>;
+            return <div>Loading</div>;
 
         return (
             <div className="App">    
             <div className="text">
                     <h1> Hjemmet som model</h1>
-                    <hh>Lad dine hjemmedage inspirere af kunst skabt og udformet i hjemmet</hh>
+                    <hh>Lad kunst inspireret af hjemmet forsøde dit liv i en hjemmegående tid</hh>
                     </div>
                     <div className="button-container">
                     <button className="button" 
@@ -84,6 +108,7 @@ class App extends React.Component {
                         />
                         </div>  
                     ))}
+                
                         <div className="logo">
                         <img src={logo} width="7%"/>
                         </div>
@@ -97,6 +122,13 @@ class App extends React.Component {
         );
 
     }
+
+// Lad dine hjemmedage inspirere af kunst og udformet skabt i hjemmet
+// Lad kunst inspireret af hjemmet forsøde dit liv i en hjemmegående tid
+// Lad kunst inspireret af hjemmet opmuntre det hjemlige liv 
+// Lad dine hjemmedage begejstre af kunst inspireret af hjemmet 
+
+
 
 }
 

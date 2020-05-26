@@ -126,7 +126,7 @@ code {
 .button{
   margin-top: 10px;
   margin-bottom: 10px;
-  font-size: 10px;
+  font-size: 15px;
   padding: 5px 10px 5px 10px;
   border-width: 4px;
 
@@ -149,13 +149,13 @@ code {
 
  }
  .text hh{
-  font-size: 10px;
+  font-size: 12px;
 }
 
 .button{
   margin-top: 5px;
   margin-bottom: 5px;
-  font-size: 5px;
+  font-size: 10px;
   padding: 2px 5px 2px 5px;
   border-width: 2px;
 

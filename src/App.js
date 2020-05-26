@@ -91,7 +91,7 @@ class App extends React.Component {
             <div className="App">    
             <div className="text">
                     <h1> Hjemmet som model</h1>
-                    <hh>Lad kunst inspireret af hjemmet forsøde dit liv i en hjemmegående tid</hh>
+                    <hh>Lad kunst inspireret af hjemmet forskønne dit liv i en hjemmegående tid</hh>
                     </div>
                     <div className="button-container">
                     <button className="button" 

@@ -14,13 +14,14 @@ class App extends React.Component {
  * 
  */
 
-    constructor(props) {
 
-        super(props);
+    constructor() {
+
+        super();  
+    
 
         this.state = {
             items: null,
-            offset: Math.floor(Math.random()),
             isLoaded: false
         }
     }
@@ -39,7 +40,6 @@ class App extends React.Component {
                 this.setState({
                     items: json.items,
                     isLoaded: true, 
-                    offset: Math.floor(Math.random()* json.found) 
                 })
             }).catch((error) => {
                 console.log(error);
@@ -65,15 +65,14 @@ class App extends React.Component {
 
         const response = await fetch
         (`https://api.smk.dk/api/v1/art/search/?keys=${search.term}&facets=has_image&filters=has_image%3Atrue&offset=
-        ${Math.max([this.state.offset], [this.state.amount])}&rows=1`);
+        ${Math.floor(Math.random() * search.amount - 1)}&rows=1`);
         const json = await response.json();
-        console.log(json);
         this.setState({
-            items:[...json.items],
-            offset: Math.floor(Math.random() * json.found)});
-    }
-            
+            items:json.items
+    })
 
+}
+        
 
     /**
      * render
@@ -91,7 +90,7 @@ class App extends React.Component {
             <div className="App">    
             <div className="text">
                     <h1> Hjemmet som model</h1>
-                    <hh>Lad kunst inspireret af hjemmet forskønne dit liv i en hjemmegående tid</hh>
+                    <p>Lad kunst inspireret af hjemmet forskønne dit liv i en hjemmegående tid</p>
                     </div>
                     <div className="button-container">
                     <button className="button" 
@@ -101,35 +100,21 @@ class App extends React.Component {
                         </button>
                         </div>
                     {items.map(item => (
-                       <div className="image-container">
+                       <div className="image-container" key={item.id}>
                        <img 
                         key={item.id}
                         src={item.image_thumbnail}
+                        alt={item.titles[0].title}
                         />
                         </div>  
                     ))}
                 
                         <div className="logo">
-                        <img src={logo} width="7%"/>
+                        <img src={logo} width="7%" alt="logo"/>
                         </div>
             </div>
-            
-
-            
-
-
-
         );
-
     }
-
-// Lad dine hjemmedage inspirere af kunst og udformet skabt i hjemmet
-// Lad kunst inspireret af hjemmet forsøde dit liv i en hjemmegående tid
-// Lad kunst inspireret af hjemmet opmuntre det hjemlige liv 
-// Lad dine hjemmedage begejstre af kunst inspireret af hjemmet 
-
-
-
 }
 
 export default App;
